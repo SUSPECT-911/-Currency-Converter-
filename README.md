@@ -38,7 +38,7 @@ currency-converter/
 ## ⚙️ How to Run Locally
 
 1. Clone the repository  
-git clone https://github.com/your-username/currency-converter.git
+git clone https://github.com/SUSPECT-911/-Currency-Converter-
 
 2. Open folder  
 cd currency-converter
@@ -56,15 +56,6 @@ OR
 - App fetches exchange rates from API  
 - JavaScript calculates and displays result  
 - Flags update dynamically using country codes  
-
----
-
-## 📌 Future Improvements
-
-- 🔍 Searchable dropdown  
-- 📊 Currency history graph  
-- 🌙 Dark mode  
-- 💾 Save favorite currencies  
 
 ---
 
