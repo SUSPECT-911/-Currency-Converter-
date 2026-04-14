@@ -1,9 +1,8 @@
 # -Currency-Converter-
 💱 Currency Converter  A simple and responsive Currency Converter Web App built using HTML, CSS, and JavaScript. It allows users to convert currencies in real-time with country flags support.
-# 💱 Currency Converter
 
-A simple and responsive Currency Converter Web App built using HTML, CSS, and JavaScript. It allows users to convert currencies in real-time with country flags support.
-
+## 🌐 Live Demo
+https://suspect-911.github.io/-Currency-Converter-/
 ---
 
 ## 🚀 Features
@@ -48,14 +47,6 @@ cd currency-converter
 - Open index.html manually  
 OR  
 - Use VS Code Live Server  
-
----
-
-## 🌐 Live Demo
-
-
-
-https://your-username.github.io/currency-converter/
 
 ---
 
