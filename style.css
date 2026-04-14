@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffd3e0;
+    background: radial-gradient(circle at 10% 20%, rgb(255, 233, 238) 0%, rgb(255, 203, 222) 100%);
+    color: #4a3b40;
+    padding: 1rem;
+}
+
+.cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 30px;
+    padding: 2.5rem 2rem;
+    width: 24rem;
+    max-width: 100%;
+    /* Color Graded Warm Claymorphic Shadow */
+    box-shadow: 
+        15px 15px 30px rgba(220, 160, 180, 0.4), 
+        -10px -10px 20px rgba(255, 255, 255, 1), 
+        inset 5px 5px 15px rgba(255, 255, 255, 1), 
+        inset -5px -5px 15px rgba(230, 180, 200, 0.2);
+    border: 4px solid #fff;
+    transform: perspective(1000px) rotateX(2deg);
+    transition: transform 0.3s ease;
+}
+
+.cont:hover {
+    transform: perspective(1000px) rotateX(0deg) translateY(-3px);
+}
+
+h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    color: #5c434d;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.3rem;
+    width: 100%;
+}
+
+.input {
+    width: 100%;
+    border-radius: 15px;
+    height: 3.2rem;
+    padding: 0 1rem;
+    background: #fff5f7;
+    border: none;
+    color: #5c434d;
+    caret-color: #ff7e5f;
+    font-size: 1.1rem;
+    font-weight: 600;
+    outline: none;
+    box-shadow: 
+        inset 4px 4px 8px rgba(220, 180, 190, 0.3),
+        inset -4px -4px 8px rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+}
+
+.input::placeholder {
+    color: #bfaabb;
+}
+
+/* Hide number input arrows for a cleaner look */
+input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.input:focus {
+    background: #fff;
+    box-shadow: 
+        inset 6px 6px 12px rgba(220, 180, 190, 0.4),
+        inset -6px -6px 12px rgba(255, 255, 255, 1),
+        0 0 0 4px rgba(255, 126, 95, 0.2);
+}
+
+.currency {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.from, .to {
+    display: flex;
+    align-items: center;
+    background: #fff5f7;
+    border: none;
+    border-radius: 15px;
+    padding: 0.6rem 0.8rem;
+    width: 47%;
+    box-shadow: 
+        4px 4px 10px rgba(220, 180, 190, 0.3),
+        -4px -4px 10px rgba(255,255,255,0.9),
+        inset 2px 2px 5px rgba(255,255,255,1);
+    transition: transform 0.2s;
+}
+
+.from:hover, .to:hover {
+    transform: translateY(-2px);
+}
+
+img {
+    height: 1.2rem;
+    width: 1.6rem;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+select {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%235c434d" d="M7 10l5 5 5-5z"/></svg>') no-repeat right center;
+    background-size: 1.5rem;
+    padding-right: 1.5rem;
+    border: none;
+    color: #5c434d;
+    font-size: 1rem;
+    font-weight: 800;
+    outline: none;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+}
+
+select option {
+    background: #fff5f7;
+    color: #5c434d;
+    font-weight: 600;
+    padding: 0.5rem;
+}
+
+.btn {
+    width: 100%;
+    background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    height: 3.5rem;
+    font-size: 1.1rem;
+    font-weight: 800;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 
+        0 10px 20px rgba(255, 126, 95, 0.4),
+        inset 2px 2px 5px rgba(255,255,255,0.4),
+        inset -3px -3px 5px rgba(0,0,0,0.1);
+    transform: translateY(0);
+    transition: all 0.2s ease;
+    margin-top: 0.5rem;
+}
+
+.btn:active {
+    transform: translateY(4px);
+    box-shadow: 
+        0 2px 5px rgba(255, 126, 95, 0.4),
+        inset 3px 3px 8px rgba(0,0,0,0.2),
+        inset -2px -2px 5px rgba(255,255,255,0.3);
+}
+
+.output {
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-align: center;
+    margin-top: 0.5rem;
+    min-height: 3.5rem;
+    padding: 0.6rem 1rem;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #fff5f7 0%, #ffeef2 100%);
+    color: #ff7e5f;
+    box-shadow: 
+        inset 4px 4px 8px rgba(255,255,255,0.9),
+        inset -4px -4px 8px rgba(220, 180, 190, 0.2),
+        4px 4px 10px rgba(220, 180, 190, 0.2);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 480px) {
+    .cont {
+        width: 100%;
+        padding: 1.5rem 1.2rem;
+        border-radius: 20px;
+        transform: perspective(1000px) rotateX(1deg);
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+
+    .items {
+        gap: 1rem;
+    }
+    
+    .input {
+        height: 2.8rem;
+        font-size: 0.95rem;
+    }
+    
+    .currency {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .from, .to {
+        width: 100%;
+        padding: 0.6rem;
+    }
+    
+    select {
+        font-size: 0.9rem;
+    }
+    
+    .btn {
+        height: 3rem;
+        font-size: 0.95rem;
+    }
+    
+    .output {
+        font-size: 1rem;
+        min-height: 2.8rem;
+        padding: 0.5rem;
+    }
+}
