@@ -26,21 +26,12 @@ A simple and responsive Currency Converter Web App built using HTML, CSS, and Ja
 
 ---
 
-## 📸 Preview
-
-(Add your screenshot here)
-
-![App Screenshot](screenshot.png)
-
----
-
 ## 📂 Project Structure
 
 currency-converter/
 │── index.html
 │── style.css
-│── script.js
-│── codes.js   (currency + country codes)
+│── app.js
 │── README.md
 
 ---
@@ -62,7 +53,7 @@ OR
 
 ## 🌐 Live Demo
 
-(Add GitHub Pages link here)
+
 
 https://your-username.github.io/currency-converter/
 
@@ -100,4 +91,4 @@ This project is open-source and available under the MIT License.
 
 ## 👨‍💻 Author
 
-Nagesh L
+Simon Riley
