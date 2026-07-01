@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import flags from "./FlagsData";
-import { resume } from "react-dom/server";
+
 function App() {
   const [currencies, setCurrencies] = useState([]);
 
   useEffect(() => {
     async function getCurrencies() {
-      const res = await fetch("https://api.frankfurter.app/currencies");
+      const res = await fetch("/api/currencies");
       const data = await res.json();
 
       setCurrencies(Object.keys(data));
@@ -41,7 +41,7 @@ const MainApp = ({ currencies }) => {
           );
         }
         const res = await fetch(
-          `https://api.frankfurter.app/latest?amount=${value}&from=${fromCurrency}&to=${toCurrency}`,
+          `/api/latest?amount=${value}&from=${fromCurrency}&to=${toCurrency}`,
         );
         const data = await res.json();
         console.log(data.rates);
