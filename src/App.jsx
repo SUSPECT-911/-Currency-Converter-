@@ -6,7 +6,14 @@ function App() {
 
   useEffect(() => {
     async function getCurrencies() {
+      /********FOR DEPLOYEMENT USE THIS***********/
       const res = await fetch("/api/currencies");
+      /******************************************/
+
+      /********TO RUN LOCALLY USE THIS***********/
+      // const res = await fetch("/api/currencies");
+      /******************************************/
+
       const data = await res.json();
 
       setCurrencies(Object.keys(data));
@@ -35,24 +42,51 @@ const MainApp = ({ currencies }) => {
   useEffect(
     function () {
       async function GetValue() {
+        if (value === "" || value < 0) {
+          setConvertedValue("Please enter an amount");
+          return;
+        }
+        if (Number(value) === 0) {
+          setConvertedValue(
+            `${value} ${fromCurrency} is ${value} ${toCurrency}`,
+          );
+          return;
+        }
         if (fromCurrency === toCurrency) {
           setConvertedValue(
             `${value} ${fromCurrency} is ${value} ${toCurrency}`,
           );
+          return;
         }
+
+        /********FOR DEPLOYEMENT USE THIS***********/
         const res = await fetch(
           `/api/latest?amount=${value}&from=${fromCurrency}&to=${toCurrency}`,
         );
+        /******************************************/
+
+        /********TO RUN LOCALLY USE THIS***********/
+        // const res = await fetch(
+        //   `/api/latest?amount=${value}&from=${fromCurrency}&to=${toCurrency}`,
+        // );
+        /******************************************/
+
         const data = await res.json();
         console.log(data.rates);
         const country = Object.keys(data.rates);
 
         setConvertedValue(
-          `${data.amount} ${data.base} is ${data.rates[toCurrency]} ${country}  `,
+          `${data.amount.toLocaleString("en-En", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} ${data.base} is ${data.rates[
+            toCurrency
+          ].toLocaleString("en-US", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+          })} ${country}  `,
         );
       }
       GetValue();
     },
+
     [fromCurrency, toCurrency, value],
   );
 
@@ -130,7 +164,8 @@ border-blue-100
 const AmountInput = ({ setValue, value }) => {
   return (
     <input
-      type="text"
+      type="number"
+      min="0"
       className="
 w-full
 p-4
@@ -146,6 +181,11 @@ outline-none
 "
       placeholder="Enter Digits"
       onChange={(e) => setValue(e.target.value)}
+      onKeyDown={(e) => {
+        if (["e", "E", "+", "-"].includes(e.key)) {
+          e.preventDefault();
+        }
+      }}
       value={value}
     />
   );
