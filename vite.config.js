@@ -4,14 +4,4 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: "/-Currency-Converter-/",
-  server: {
-    proxy: {
-      "/api": {
-        target: "https://api.frankfurter.app",
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ""),
-      },
-    },
-  },
 });
