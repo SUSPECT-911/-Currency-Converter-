@@ -41,7 +41,7 @@ const MainApp = ({ currencies }) => {
           );
         }
         const res = await fetch(
-          `/api/latest?amount=${value}&from=${fromCurrency}&to=${toCurrency}`,
+          `https://api.frankfurter.app/latest?amount=${value}&from=${fromCurrency}&to=${toCurrency}`,
         );
         const data = await res.json();
         console.log(data.rates);
